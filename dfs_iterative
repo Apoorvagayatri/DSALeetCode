@@ -1,0 +1,16 @@
+def dfsOfGraph(self, V, adj):
+    visited = []
+    stack = [0]
+    
+    while stack:
+        current = stack.pop()
+        
+        # No need to check if it's in visited; just add it
+        visited.append(current)
+        
+        # Add neighbors to the stack only if they haven't been visited
+        for node in adj[current]:
+            if node not in visited and node not in stack:
+                stack.append(node)
+    
+    return visited
