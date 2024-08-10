@@ -1,0 +1,14 @@
+def bfs(source):
+    visited = []
+    queue = [source]
+
+    while queue:
+        current = queue.pop(0)
+        if current not in visited:
+            visited.append(current)
+
+            for node in graph[current]:
+                if node not in visited and node not in queue:
+                    queue.append(node)
+
+    return visited
